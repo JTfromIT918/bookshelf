@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookshelf</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main>
+        <header>
+            <p class="eyebrow">THE PERSONAL LIBRARY</p>
+            <h1>My Bookshelf</h1>
+            <p>Collect stories, explore ideas, and keep track of what you read.</p>
+        </header>
+        <section class="panel">
+            <h2>Add a book</h2>
+            <form id="bookForm">
+                <label>Title<input id="title" required placeholder="Dune"></label>
+                <label>Author<input id="author" required placeholder="Frank Herbert"></label>
+                <label>Pages<input id="pages" type="number" min="1" step="1" required placeholder="412"></label>
+                <label>Book type
+                    <select id="bookType">
+                        <option value="fiction">Fiction</option>
+                        <option value="nonfiction">Nonfiction</option>
+                    </select>
+                </label>
+                <label><span id="categoryLabel">Genre</span><select id="category" required></select></label>
+                <label>Cover image URL (optional)<input id="cover" type="url" placeholder="https://…"></label>
+                <button type="submit">+ Add to bookshelf</button>
+            </form>
+        </section>
+        <section class="collection">
+            <h2>Your collection</h2>
+            <div class="stats">
+                <div><small>BOOKS</small><strong id="bookCount">0</strong></div>
+                <div><small>AVERAGE PAGES</small><strong id="averagePages">0</strong></div>
+                <div><small>LONGEST BOOK</small><strong id="longestBook">—</strong></div>
+            </div>
+            <label class="search">Filter by author<input id="authorSearch" placeholder="Enter an author's full name"></label>
+            <p id="emptyMessage" role="status">Your shelf is empty. Add a book to get started!</p>
+            <div id="bookList" class="bookList" aria-live="polite"></div>
+        </section>
+    </main>
+</body>
+</html>
