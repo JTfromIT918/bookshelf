@@ -73,8 +73,14 @@ class Bookshelf {
     }
 
     getBooksByAuthor(author) {
-        return this.#books.filter(book => book.author.toLowerCase() === author.trim().toLowerCase());
-    }
+
+    const search = author.trim().toLowerCase();
+
+    return this.#books.filter(book =>
+        book.author.toLowerCase().includes(search)
+    );
+
+}
 
     getLongestBook() {
         return this.#books.reduce((longest, book) =>
